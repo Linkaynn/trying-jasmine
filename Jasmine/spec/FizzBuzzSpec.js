@@ -28,3 +28,9 @@ describe("FizzBuzz function", function () {
 		expect(fizzBuzz(5)).toBe("12Fizz4Buzz");
 	});
 });
+
+describe("FizzBuzz function", function () {
+	it("has to return \"12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz\" with 15 as parameter", function () {
+		expect(fizzBuzz(15)).toBe("12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz");
+	});
+});
