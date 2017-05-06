@@ -10,3 +10,9 @@ describe("FizzBuzz function", function () {
 		expect(fizzBuzz(5)).toBe("Buzz");
 	});
 });
+
+describe("FizzBuzz function", function () {
+	it("has to return \"FizzBuzz\" with 15 as parameter", function () {
+		expect(fizzBuzz(15)).toBe("FizzBuzz");
+	});
+});
