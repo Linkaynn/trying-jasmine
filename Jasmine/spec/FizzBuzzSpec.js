@@ -1,25 +1,25 @@
 describe("Decompose function", function () {
 	it("has to return \"Fizz\" with 3 as parameter", function () {
-		expect(decompose(3)).toBe("Fizz");
+		expect(translate(3)).toBe("Fizz");
 	});
 });
 
 
 describe("Decompose function", function () {
 	it("has to return \"Buzz\" with 5 as parameter", function () {
-		expect(decompose(5)).toBe("Buzz");
+		expect(translate(5)).toBe("Buzz");
 	});
 });
 
 describe("Decompose function", function () {
 	it("has to return \"FizzBuzz\" with 15 as parameter", function () {
-		expect(decompose(15)).toBe("FizzBuzz");
+		expect(translate(15)).toBe("FizzBuzz");
 	});
 });
 
 describe("Decompose function", function () {
 	it("has to return \"1\" with 1 as parameter", function () {
-		expect(decompose(1)).toBe("1");
+		expect(translate(1)).toBe("1");
 	});
 });
 
