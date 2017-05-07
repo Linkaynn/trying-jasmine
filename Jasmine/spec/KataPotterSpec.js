@@ -112,3 +112,22 @@ describe("Discount tests:", function () {
 		expect(priceOf([0, 1, 2, 3, 4])).toBe(8 * 5 * 0.75);
 	});
 });
+
+describe("Several discount tests:", function () {
+	it("[0,0,1] costs 8 + (8 * 2 * 0.95)", function () {
+		expect(priceOf([0, 0, 1])).toBe(8 + (8 * 2 * 0.95));
+	});
+
+	it("[0,0,1,1] costs 2 * (8 * 2 * 0.95)", function () {
+		expect(priceOf([0, 0, 1, 1])).toBe(2 * (8 * 2 * 0.95));
+	});
+
+	it("[0,0,1,2,2,3] costs (8 * 4 * 0.8) + (8 * 2 * 0.95)", function () {
+		expect(priceOf([0, 0, 1, 2, 2, 3])).toBe((8 * 4 * 0.8) + (8 * 2 * 0.95));
+	});
+
+	it("[0,0,1,1,2,2,3,4] costs 8 + (8 * 5 * 0.75)", function () {
+		expect(priceOf([0, 0, 1, 1, 2, 2, 3, 4])).toBe(8 + (8 * 5 * 0.75));
+	});
+});
+
