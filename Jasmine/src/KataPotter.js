@@ -7,7 +7,7 @@ function priceOf(arrayOfBooks) {
 
 	let discount = getDiscount(differentBooksCount);
 
-	return ((arrayOfBooks.length - differentBooksCount) * 8) + (differentBooksCount * 8) * (1 - discount);
+	return ((arrayOfBooks.length - (differentBooksCount + 1)) * 8) + ((differentBooksCount + 1) * 8) * (1 - discount);
 }
 
 function getDiscount(differentBooksCount) {
@@ -17,10 +17,14 @@ function getDiscount(differentBooksCount) {
 function getDifferentBooksCount(arrayOfBooks) {
 	let differentBooksCount = 0;
 
+	arrayOfBooks.sort();
+
 	for (let indexOne = 0; indexOne < arrayOfBooks.length; indexOne++) {
 		for (let indexTwo = indexOne + 1; indexTwo < arrayOfBooks.length; indexTwo++) {
 			if (arrayOfBooks[indexTwo] != arrayOfBooks[indexOne]) {
 				differentBooksCount++;
+				indexOne = indexTwo - 1;
+				break;
 			}
 		}
 	}

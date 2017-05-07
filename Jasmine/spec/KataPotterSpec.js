@@ -14,19 +14,31 @@ describe("Different books function must count", function () {
 	});
 
 	it("0 with [0,0,0,0,0]", function () {
-		expect(getDifferentBooksCount([0, 0])).toBe(0);
+		expect(getDifferentBooksCount([0, 0, 0, 0, 0])).toBe(0);
 	});
 
 	it("1 with [0,1]", function () {
-		expect(getDifferentBooksCount([0, 0])).toBe(0);
+		expect(getDifferentBooksCount([0, 1])).toBe(1);
 	});
 
 	it("1 with [0,1,0,1]", function () {
-		expect(getDifferentBooksCount([0, 0])).toBe(0);
+		expect(getDifferentBooksCount([0, 1, 0, 1])).toBe(1);
 	});
 
 	it("2 with [0,1,0,2]", function () {
-		expect(getDifferentBooksCount([0, 0])).toBe(0);
+		expect(getDifferentBooksCount([0, 1, 0, 2])).toBe(2);
+	});
+
+	it("3 with [0,1,2,4]", function () {
+		expect(getDifferentBooksCount([0, 1, 2, 4])).toBe(3);
+	});
+
+	it("4 with [0,1,2,3,4]", function () {
+		expect(getDifferentBooksCount([0, 1, 2, 3, 4])).toBe(4);
+	});
+
+	it("5 with [0,1,2,3,4,5]", function () {
+		expect(getDifferentBooksCount([0, 1, 2, 3, 4, 5])).toBe(5);
 	});
 });
 
@@ -58,27 +70,45 @@ describe("Discount must be", function () {
 });
 
 describe("Basic tests:", function () {
-	it("Basket empty, cost 0", function () {
+	it("[], cost 0", function () {
 		expect(priceOf([])).toBe(0);
 	});
 
-	it("Basket [0], cost 8", function () {
+	it("[0], cost 8", function () {
 		expect(priceOf([0])).toBe(8);
 	});
 
-	it("Basket [1], cost 8", function () {
+	it("[1], cost 8", function () {
 		expect(priceOf([1])).toBe(8);
 	});
 
-	it("Basket [2], cost 8", function () {
+	it("[2], cost 8", function () {
 		expect(priceOf([2])).toBe(8);
 	});
 
-	it("Basket [3], cost 8", function () {
+	it("[3], cost 8", function () {
 		expect(priceOf([3])).toBe(8);
 	});
 
-	it("Basket [4], cost 8", function () {
+	it("[4], cost 8", function () {
 		expect(priceOf([4])).toBe(8);
+	});
+});
+
+describe("Discount tests:", function () {
+	it("[0,1] costs 8 * 2 * 0.95", function () {
+		expect(priceOf([0, 1])).toBe(8 * 2 * 0.95);
+	});
+
+	it("[0,2,4] costs 8 * 3 * 0.9", function () {
+		expect(priceOf([0, 2, 4])).toBe(8 * 3 * 0.9);
+	});
+
+	it("[0,1,2,4] costs 8 * 4 * 0.8", function () {
+		expect(priceOf([0, 1, 2, 4])).toBe(8 * 4 * 0.8);
+	});
+
+	it("[0,1,2,3,4] costs 8 * 5 * 0.75", function () {
+		expect(priceOf([0, 1,2,3,4])).toBe(8 * 5 * 0.75);
 	});
 });
