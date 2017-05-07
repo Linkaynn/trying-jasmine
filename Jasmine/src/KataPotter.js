@@ -5,9 +5,13 @@ function priceOf(arrayOfBooks) {
 
 	let differentBooksCount = getDifferentBooksCount(arrayOfBooks);
 
-	let discount = (differentBooksCount * 5) / 100;
+	let discount = getDiscount(differentBooksCount);
 
-	return ((arrayOfBooks - differentBooksCount) * 8) + (differentBooksCount * 8) * (1 - discount);
+	return ((arrayOfBooks.length - differentBooksCount) * 8) + (differentBooksCount * 8) * (1 - discount);
+}
+
+function getDiscount(differentBooksCount) {
+	return (differentBooksCount * 5) / 100;
 }
 
 function getDifferentBooksCount(arrayOfBooks) {
