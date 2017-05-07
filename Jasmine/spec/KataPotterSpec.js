@@ -55,16 +55,16 @@ describe("Discount must be", function () {
 		expect(getDiscount(2)).toBe(0.10);
 	});
 
-	it("0.15 with 3", function () {
-		expect(getDiscount(3)).toBe(0.15);
+	it("0.20 with 3", function () {
+		expect(getDiscount(3)).toBe(0.20);
 	});
 
-	it("0.20 with 4", function () {
-		expect(getDiscount(4)).toBe(0.20);
+	it("0.25 with 4", function () {
+		expect(getDiscount(4)).toBe(0.25);
 	});
 
-	it("0.25 with 5", function () {
-		expect(getDiscount(5)).toBe(0.25);
+	it("0 with 5", function () {
+		expect(getDiscount(5)).toBe(0);
 	});
 
 });
@@ -109,6 +109,6 @@ describe("Discount tests:", function () {
 	});
 
 	it("[0,1,2,3,4] costs 8 * 5 * 0.75", function () {
-		expect(priceOf([0, 1,2,3,4])).toBe(8 * 5 * 0.75);
+		expect(priceOf([0, 1, 2, 3, 4])).toBe(8 * 5 * 0.75);
 	});
 });

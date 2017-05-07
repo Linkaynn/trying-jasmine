@@ -11,7 +11,18 @@ function priceOf(arrayOfBooks) {
 }
 
 function getDiscount(differentBooksCount) {
-	return (differentBooksCount * 5) / 100;
+	switch (differentBooksCount) {
+		case 1:
+			return 0.05;
+		case 2:
+			return 0.10;
+		case 3:
+			return 0.20;
+		case 4:
+			return 0.25;
+		default:
+			return 0;
+	}
 }
 
 function getDifferentBooksCount(arrayOfBooks) {
